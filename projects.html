@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Mark Lacanaria</title>
+    <title>.projects | markyDev</title>
     <meta name="description" content="Some of the (mini)projects I have done listed on this page." />
     <meta name="keywords" content="Projects By Mark Lacanaria" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
@@ -12,6 +12,17 @@
   </head>
   <body>
     <header>
+     
+    <script>
+  // Immediate theme application
+  (function() {
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-mode');
+      document.body.classList.add('dark-mode');
+    }
+  })();
+    </script>
       <div id="head">Projects of Marky<span class="cursor">_</span></div>
     </header>
     <main id="content">
@@ -75,6 +86,9 @@
           <a href="https://web.facebook.com/mark.andradeyu.94" target="_blank" rel="noopener" aria-label="Facebook">
             <i class="fab fa-facebook fa-lg"></i>
           </a>
+          <a href="https://twitter.com/yoitsmemarky" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
         </div>
         <div class="wrap">
           <a href="index.html">Home</a>
@@ -88,6 +102,13 @@
         var element = document.body;
         element.classList.toggle("dark-mode");
       }
+
+      // Current implementation
+window.onload = function() {
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  }
+};
     </script>
   </body>
 </html>

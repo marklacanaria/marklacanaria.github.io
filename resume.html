@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      // Immediate theme application
+      (function() {
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+        if (isDarkMode) {
+          document.documentElement.classList.add('dark-mode');
+          document.body.classList.add('dark-mode');
+        }
+      })();
+    </script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume | Mark Lacanaria</title>
+    <title>.resume | markyDev</title>
     <meta name="description" content="Resume of Mark Lacanaria." />
     <meta name="keywords" content="Resume By Mark Lacanaria" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
@@ -30,14 +41,14 @@
         
          
           <span class="toggle-text">Toggle Theme</span>
-          <center>scroll down</center>
+            <center class="toggle-text">scroll down</center>
           <div id="innercontent">
           <!--  <h3 class="heading">you can download a copy of this below [scroll a little bit]</h3>-->
             <div class="resume-container">
               <img src="for resume.png" alt="Resume Preview" width="100%">
-              <div>
-                Or you can download the PDF file from this 
+                <div class="toggle-text">Or you can download the PDF file from this 
                 <a class="heading" href="https://docs.google.com/document/d/1YauujNkUQnycrzwGSLOgqFDr4_oyXQT57Gwo25TZgz0/export?format=pdf">link</a>.
+                </div>
               </div>
             </div>
           </div>
@@ -49,6 +60,9 @@
         <div class="social-icons">
           <a href="https://github.com/marklacanaria" target="_blank" rel="noopener" aria-label="Github">
             <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/mark.andradeyu.94" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook fa-lg"></i>
           </a>
           <a href="https://twitter.com/yoitsmemarky" target="_blank" rel="noopener" aria-label="Twitter">
             <i class="fab fa-twitter fa-lg"></i>
@@ -120,9 +134,12 @@ input:checked + .slider:before {
   font-display: block;
 }
 
+
 /* Dark mode text color */
 .dark-mode .toggle-text {
   color: #fff;
 }
 
+
 </style>
+
