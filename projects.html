@@ -4,87 +4,264 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Mark Lacanaria</title>
-    <meta
-      name="description"
-      content="Some of the (mini)projects, I Have done listed on this page."
-    />
+    <meta name="description" content="Some of the (mini)projects I have done listed on this page." />
     <meta name="keywords" content="Projects By Mark Lacanaria" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="stylesheets/projects.css" />
-    <script
-      src="https://kit.fontawesome.com/1a48924413.js"
-      crossorigin="anonymous"
-    ></script>
-
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="https://kit.fontawesome.com/1a48924413.js" crossorigin="anonymous"></script>
   </head>
-
   <body>
-    <div class="container">
-      <h1>
-        Some of the <span class="heading">projects</span> I have done:
-      </h1>
-      <div class="filter-data-btn">
-       <!-- <p>Filter By:</p>
-        <p class="filter-btn" id="All" >All</p>
-        <p class="filter-btn" id="VanillaJS">VanillaJS</p>
-        <p class="filter-btn" id="ReactJS" >ReactJS</p>
-        <p class="filter-btn" id="Python" >Python</p> -->
+    <header>
+      <div id="head">Projects of Marky<span class="cursor">_</span></div>
+    </header>
+    <main id="content">
+      <div class="container">
+        <div id="bar">
+          <div class="icon icon-red"></div>
+          <div class="icon icon-yellow"></div>
+          <div class="icon icon-green"></div>
+        </div>
+        <div id="screen">
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-text">Toggle Theme</span>
+          <div id="innercontentProjects">
+            <h3>Some of the <span class="heading">projects</span> I have done:</h3>
+            <div class="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="https://spendsensebymarky.netlify.app/" target="_blank">
+                    <img src="images/spendsense.PNG" border="2" width="450" height="450" />
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://cozycornerbymarky.netlify.app" target="_blank">
+                    <img src="images/Cozycorner.PNG" border="2" width="450" height="450" />
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://v-meet-coral.vercel.app/" target="_blank">
+                    <img src="images/vmeet.PNG" border="2" width="450" height="450" />
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://drive.google.com/uc?export=download&id=1EP23r8DJ_8axhxbVwSeDCGhetvXAC3QQ" target="_blank">
+                    <img src="images/floyd.PNG" border="2" width="450" height="450" />
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="https://drive.google.com/uc?export=download&id=1qusxTnwvH05IQFsBoOjUN3ONswhmUlam" target="_blank">
+                    <img src="images/IS.png" border="2" width="450" height="450" />
+                  </a>
+                </div>
+              </div>
+              <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+              <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+            </div> <h3>View details of the projects <a href="projectsExtension.html" class="heading">here</a>...</h3>
+            <h3>More projects to be uploaded...</h3>
+           
+          </div>
+        </div>
       </div>
-      <!--<div class="loader">Loading...</div>-->
-      <a href="https://drive.google.com/uc?export=download&id=1EP23r8DJ_8axhxbVwSeDCGhetvXAC3QQ">
-        <img src="images/floyd.PNG" border="2" width="450" height="450" />
-      </a>
-      <a href="https://drive.google.com/uc?export=download&id=1qusxTnwvH05IQFsBoOjUN3ONswhmUlam">
-        <img src="images/IS.png" border="2" width="450" height="450" />
-
-    
-      </a>
-      <h3>more projects to be uploaded</h3>
-  </div>
-
-    <!-- projects -->
-    <div id="projects" class="container">
-      
-      <div class="project-temp project-main">
-        <!-- getting projects -->
-        
-      </div>
-    <div class="container extra-div">
-      <p>
-        <!--(for more projects, checkout on my <a href="https://github.com/marklacanaria">github</a>.)-->
-      </p>
-    </div>
-    <!--Footer Section-->
-    <div id="footer">
+    </main>
+    <footer id="footer">
       <div class="wrapper">
         <div class="social-icons">
-          <a
-            href="https://github.com/marklacanaria"
-            target="_blank"
-            rel="noopener"
-            aria-label="Github"
-            ><i class="fab fa-github fa-lg"></i
-          ></a>
-          <a
-            href="https://web.facebook.com/mark.andradeyu.94"
-            target="_blank"
-            rel="noopener"
-            aria-label="facebook"
-            ><i class="fab fa-facebook fa-lg"></i
-          ></a>
+          <a href="https://github.com/marklacanaria" target="_blank" rel="noopener" aria-label="Github">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/mark.andradeyu.94" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
         </div>
-
         <div class="wrap">
           <a href="index.html">Home</a>
-          <a
-            href="./resume.html"
-            >Resume</a
-          >
+          <a href="resume.html">Resume</a>
           <a href="https://marklacanaria.github.io/home/" target="_blank">OldPortfolio</a>
         </div>
       </div>
-    </div>
-
-    <script type="module" src="src/projects.js"></script>
+    </footer>
+    <script>
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    </script>
   </body>
 </html>
+
+<script>
+  document.getElementById("darkModeToggle").addEventListener("change", function() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+  });
+  
+  window.onload = function() {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+      document.getElementById("darkModeToggle").checked = true;
+    }
+  };
+</script>
+<style>
+  .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Decreased width */
+  height: 24px; /* Decreased height */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px; /* Adjusted to match the height */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; /* Decreased height */
+  width: 18px; /* Decreased width */
+  left: 3px; /* Adjusted position */
+  bottom: 3px; /* Adjusted position */
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px); /* Adjusted translation */
+}
+
+.switch input:focus {
+  outline: none; /* Removes the blue outline */
+}
+
+/* Carousel Styles */
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  max-width: 100%; /* Make the carousel responsive */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: none;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 90%; /* Reduce width on smaller screens */
+  }
+
+  .carousel-item img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .carousel-control {
+    padding: 8px; /* Smaller buttons on mobile */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    max-width: 100%; /* Full width on very small screens */
+  }
+
+  .carousel-control {
+    padding: 6px; /* Even smaller buttons */
+    font-size: 14px;
+  }
+}
+.toggle-text {
+  color: #ffffff; /* Default color */
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-display: block;
+}
+
+/* Dark mode text color */
+.dark-mode .toggle-text {
+  color: #fff;
+}
+
+
+</style>
+
+<script>
+let currentSlide = 0;
+
+function showSlide(index) {
+  const slides = document.querySelectorAll(".carousel-item");
+  if (index >= slides.length) {
+    currentSlide = 0;
+  } else if (index < 0) {
+    currentSlide = slides.length - 1;
+  } else {
+    currentSlide = index;
+  }
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+}
+
+function moveSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+// Automatically move to the next slide every 5 seconds
+//setInterval(() => {
+  //moveSlide(1);
+//}, 5000);
+
+// Initialize the first slide
+showSlide(currentSlide);
+
+</script>

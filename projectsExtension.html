@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Mark Lacanaria</title>
+    <meta name="description" content="Professional projects developed by Mark Lacanaria" />
+    <meta name="keywords" content="Software Projects, Web Development, Java Applications" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="https://kit.fontawesome.com/1a48924413.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div id="head">Projects of Marky<span class="cursor">_</span></div>
+    </header>
+    <main id="content">
+      <div class="container">
+        <div id="bar">
+          <div class="icon icon-red"></div>
+          <div class="icon icon-yellow"></div>
+          <div class="icon icon-green"></div>
+        </div>
+        <div id="screen">
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-text">Toggle Theme</span>
+          <div id="innercontentProjects">
+            <h3>Go back to <a href="projects.html" class="heading">projects main page</a>...</h3>
+            <div class="filter-container">
+              <span>Filter by:</span>
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="ReactJS">React</button>
+              <button class="filter-btn" data-filter="Java">Java</button>
+              <button class="filter-btn" data-filter="NodeJS">Node.js</button>
+            </div>
+            
+            <div class="projects-grid" id="projectsContainer">
+              <!-- Projects will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="wrapper">
+        <div class="social-icons">
+          <a href="https://github.com/marklacanaria" target="_blank" rel="noopener" aria-label="Github">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/mark.andradeyu.94" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+        </div>
+        <div class="wrap">
+          <a href="index.html">Home</a>
+          <a href="resume.html">Resume</a>
+          <a href="https://marklacanaria.github.io/home/" target="_blank">OldPortfolio</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dark Mode Logic
+      document.getElementById("darkModeToggle").addEventListener("change", function() {
+        document.body.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+      });
+      
+      window.onload = function() {
+        if (localStorage.getItem("darkMode") === "true") {
+          document.body.classList.add("dark-mode");
+          document.getElementById("darkModeToggle").checked = true;
+        }
+      };
+
+      // Project Data
+ const projectData = [
+  {
+    projectName: "SpendSense",
+    projectDate: "January 2024",
+    projectDescription:
+      "A comprehensive expense tracking app designed to help users manage their finances efficiently. SpendSense provides intuitive analytics, budget categorization, and real-time insights to track expenses, set savings goals, and optimize spending habits.",
+    tags: ["ReactJS", "NodeJS", "MongoDB", "Express"],
+    link: "https://spendsensebymarky.netlify.app/",
+    repo: "https://github.com/marklacanaria/SpendSense",
+  },
+  {
+    projectName: "CozyCorner",
+    projectDate: "February 2024",
+    projectDescription:
+      "A beautifully designed, minimalistic blog platform that provides a cozy and personalized reading experience. CozyCorner allows users to create, share, and discover engaging content with an elegant and distraction-free interface.",
+    tags: ["NextJS", "TailwindCSS", "Contentful", "GraphQL"],
+    link: "https://cozycornerbymarky.netlify.app/",
+    repo: "https://github.com/marklacanaria/cozy-corner",
+  },
+  {
+    projectName: "VMeet",
+    projectDate: "December 2024",
+    projectDescription:
+      "A full-fledged Zoom clone that offers seamless video conferencing, screen sharing, chat features, and real-time collaboration. Built with WebRTC for high-quality video calls and an intuitive UI for a smooth user experience.",
+    tags: ["ReactJS", "WebRTC", "Socket.io", "NodeJS"],
+    link: "https://v-meet-coral.vercel.app/",
+    repo: "https://github.com/marklacanaria/v-meet",
+  },
+  {
+    projectName: "Floyd Algorithm (Java)",
+    projectDate: "April 2024",
+    projectDescription:
+      "An implementation of Floyd-Warshall Algorithm in Java to compute the shortest paths between all pairs of nodes in a weighted graph. This project includes optimized performance techniques and a user-friendly CLI to visualize path calculations.",
+    tags: ["Java", "Algorithms", "Graph Theory"],
+    link: "https://drive.google.com/uc?export=download&id=1EP23r8DJ_8axhxbVwSeDCGhetvXAC3QQ",
+    repo: "",
+  },
+  {
+    projectName: "Independent Sets, Cliques, and Vertex Cover (Java)",
+    projectDate: "May 2024",
+    projectDescription:
+      "A Java-based implementation of key graph theory concepts, including independent sets, cliques, and vertex cover. This project provides a hands-on approach to understanding these fundamental problems with interactive examples and performance analysis.",
+    tags: ["Java", "Graph Theory", "Algorithms"],
+    link: "https://drive.google.com/uc?export=download&id=1qusxTnwvH05IQFsBoOjUN3ONswhmUlam",
+    repo: "",
+  }
+];
+
+
+      // Project Template
+      function createProjectCard(project) {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <div class="project-header">
+            <h4>${project.projectName}</h4>
+            <span class="project-date">${project.projectDate}</span>
+          </div>
+          <p class="project-desc">${project.projectDescription}</p>
+          <div class="project-tags">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+          <div class="project-links">
+            ${project.link ? `<a href="${project.link}" target="_blank" class="project-link">Live Demo</a>` : ''}
+            ${project.repo ? `<a href="${project.repo}" target="_blank" class="repo-link">View Code</a>` : ''}
+          </div>
+        `;
+        return card;
+      }
+
+      // Filter Functionality
+      document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          const container = document.getElementById('projectsContainer');
+          container.innerHTML = '';
+          
+          projectData.forEach(project => {
+            if (filter === 'all' || project.tags.includes(filter)) {
+              container.appendChild(createProjectCard(project));
+            }
+          });
+        });
+      });
+
+      // Initial Load
+      window.onload = function() {
+        // Dark Mode
+        if (localStorage.getItem("darkMode") === "true") {
+          document.body.classList.add("dark-mode");
+          document.getElementById("darkModeToggle").checked = true;
+        }
+
+        // Load all projects initially
+        const container = document.getElementById('projectsContainer');
+        projectData.forEach(project => {
+          container.appendChild(createProjectCard(project));
+        });
+      };
+    </script>
+
+    <style>
+      /* Project Grid Styles */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 1rem 0;
+      }
+
+      .project-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .project-header h4 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: #2d3748;
+      }
+
+      .project-date {
+        font-size: 0.875rem;
+        color: #718096;
+      }
+
+      .project-desc {
+        color: #4a5568;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .project-tags span {
+        display: inline-block;
+        background: #e2e8f0;
+        color: #2d3748;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        margin: 0.25rem;
+      }
+
+      .project-links {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link, .repo-link {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .project-link {
+        background: #787878;
+        color: c0c1c2;
+      }
+
+      .repo-link {
+        background: #48bb78;
+        color: c0c1c2;
+      }
+
+      .project-link:hover, .repo-link:hover {
+        opacity: 0.9;
+      }
+
+      /* Filter Styles */
+      .filter-container {
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        border: 1px solid #cbd5e0;
+        border-radius: 9999px;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .filter-btn.active {
+        background: #787878;
+        color: white;
+        border-color: #787878;
+      }
+
+      /* Dark Mode Styles */
+      .dark-mode .project-card {
+        background: #2d3748;
+      }
+
+      .dark-mode .project-header h4 {
+        color: #c0c1c2;
+      }
+
+      .dark-mode .project-date {
+        color: #a0aec0;
+      }
+
+      .dark-mode .project-desc {
+        color: #c0c1c2;
+      }
+
+      .dark-mode .project-tags span {
+        background: #4a5568;
+        color: #c0c1c2;
+      }
+
+      .dark-mode .filter-btn {
+        background: #4a5568;
+        border-color: #718096;
+        color: #c0c1c2;
+      }
+
+      .dark-mode .filter-btn.active {
+        background: #787878;
+        border-color: #787878;
+      }
+      .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Decreased width */
+  height: 24px; /* Decreased height */
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px; /* Adjusted to match the height */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; /* Decreased height */
+  width: 18px; /* Decreased width */
+  left: 3px; /* Adjusted position */
+  bottom: 3px; /* Adjusted position */
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px); /* Adjusted translation */
+}
+.toggle-text {
+  color: #ffffff; /* Default color */
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-display: block;
+}
+
+/* Dark mode text color */
+.dark-mode .toggle-text {
+  color: #fff;
+}
+    </style>
+  </body>
+</html>
