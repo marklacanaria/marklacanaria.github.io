@@ -41,13 +41,22 @@
         
          
           <span class="toggle-text">Toggle Theme</span>
-            <center class="toggle-text">scroll down</center>
+            <center class="toggle-text">CERTIFICATES ATTACHED BELLOW</center>
           <div id="innercontent">
           <!--  <h3 class="heading">you can download a copy of this below [scroll a little bit]</h3>-->
             <div class="resume-container">
-              <img src="for resume.png" alt="Resume Preview" width="100%">
+              <img src="files/for resume.png" alt="Resume Preview" width="100%">
                 <div class="toggle-text">Or you can download the PDF file from this 
+                 
                 <a class="heading" href="https://docs.google.com/document/d/1YauujNkUQnycrzwGSLOgqFDr4_oyXQT57Gwo25TZgz0/export?format=pdf">link</a>.
+                    <!--CERTIFICATES ATTACHED BELOW-->
+                    <center class="toggle-text">---------------------------------</center>
+                    <center class="toggle-text">CERTIFICATES:</center>
+                    <center class="toggle-text">---------------------------------</center>
+                
+                <img src="files/1CodeCred Cert.PNG" alt="Resume Preview" width="100%">
+                <img src="files/2fcc.png" alt="Resume Preview" width="100%">
+
                 </div>
               </div>
             </div>
@@ -88,10 +97,209 @@
         }
       };
     </script>
+    <!-- Image Modal  -->
+    <div class="modal">
+      <div class="modal-controls">
+        <input type="range" min="1" max="3" step="0.1" value="1" class="zoom-slider" id="zoomSlider">
+        <span class="close-button">&times;</span>
+      </div>
+      <img class="modal-content" id="modalImage">
+    </div>
   </body>
 </html>
+<script>
+  // Add these variables at the top
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+let translateX = 0;
+let translateY = 0;
+let scale = 1;
+
+// Update the image click handler
+document.querySelectorAll('.resume-container img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = img.src;
+    // Reset zoom and position when opening new image
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    modalImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+    zoomSlider.value = 1;
+  });
+});
+
+// Add zoom slider functionality
+const zoomSlider = document.getElementById('zoomSlider');
+zoomSlider.addEventListener('input', (e) => {
+  scale = parseFloat(e.target.value);
+  modalImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+});
+
+// Add drag to pan functionality
+modalImg.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX - translateX;
+  startY = e.clientY - translateY;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  
+  translateX = e.clientX - startX;
+  translateY = e.clientY - startY;
+  modalImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+// Reset transform when closing
+function resetImage() {
+  scale = 1;
+  translateX = 0;
+  translateY = 0;
+  modalImg.style.transform = `scale(${scale})`;
+  zoomSlider.value = 1;
+}
+
+// Update close handlers to call resetImage
+[closeBtn, modal].forEach(element => {
+  element.addEventListener('click', () => {
+    modal.style.display = 'none';
+    resetImage();
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.style.display === 'flex') {
+    modal.style.display = 'none';
+    resetImage();
+  }
+});
+</script>
+
+<!--image view script-->
+<script>
+
+  
+  // Image modal handling
+const modal = document.querySelector('.modal');
+const modalImg = document.getElementById('modalImage');
+const closeBtn = document.querySelector('.close-button');
+
+// Open modal when clicking resume images
+document.querySelectorAll('.resume-container img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = img.src;
+  });
+});
+
+// Close modal interactions
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.style.display === 'flex') {
+    modal.style.display = 'none';
+  }
+});
+</script>
+
 
 <style>
+/* Image Modal Styles */
+/* Zoom Controls */
+.modal-controls {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1001;
+}
+
+.zoom-slider {
+  width: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  height: 5px;
+  appearance: none;
+}
+
+.zoom-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Make image zoomable */
+.modal-content {
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+  cursor: move;
+  cursor: grab;
+}
+
+.modal-content:active {
+  cursor: grabbing;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #ccc;
+}
+
+.resume-container img {
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+/*end of the image modal styling*/
+
+/* Toggle Styles */
   .switch {
   position: relative;
   display: inline-block;

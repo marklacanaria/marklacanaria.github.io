@@ -4,7 +4,7 @@ export const projectData = [
     projectDate: "January 2024",
     projectDescription:
       "A comprehensive expense tracking app designed to help users manage their finances efficiently. SpendSense provides intuitive analytics, budget categorization, and real-time insights to track expenses, set savings goals, and optimize spending habits.",
-    tags: ["ReactJS", "NodeJS", "MongoDB", "Express"],
+    tags: ["ReactJS", "NodeJS", "Supabase", "Express"],
     link: "https://spendsensebymarky.netlify.app/",
     repo: "https://github.com/marklacanaria/SpendSense",
   },
