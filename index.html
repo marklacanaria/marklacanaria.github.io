@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <script>
-      // Immediate theme application
-      (function() {
+      // Apply dark mode immediately before the page renders
+      (function () {
         const isDarkMode = localStorage.getItem("darkMode") === "true";
         if (isDarkMode) {
-          document.documentElement.classList.add('dark-mode');
-          document.body.classList.add('dark-mode');
+          document.documentElement.classList.add("dark-mode");
+          document.body.classList.add("dark-mode");
         }
       })();
     </script>
-    
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self';">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self';" />
     <title>.home | markyDev</title>
     <meta name="title" content="Home | Mark Lacanaria" />
     <meta name="description" content="Mark Lacanaria: soon to be programmer from Philippines." />
@@ -25,68 +24,51 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://metatags.io/" />
     <meta property="og:title" content="Home | Mark Lacanaria" />
-    <meta
-      property="og:description"
-      content="Mark Lacanaria: soon to be programmer from Philippines."
-    />
-  
+    <meta property="og:description" content="Mark Lacanaria: soon to be programmer from Philippines." />
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://metatags.io/" />
     <meta property="twitter:title" content="Home | Mark Lacanaria" />
-    <meta
-      property="twitter:description"
-      content="Mark Lacanaria: soon to be programmer from Philippines."
-    />
-
+    <meta property="twitter:description" content="Mark Lacanaria: soon to be programmer from Philippines." />
 
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
-    <script
-      src="https://kit.fontawesome.com/1a48924413.js"
-      crossorigin="anonymous">
-    </script>
+    <script src="https://kit.fontawesome.com/1a48924413.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    
     <header>
       <div id="head">Portfolio of Marky<span class="cursor">_</span></div>
     </header>
-        
 
     <main id="content">
       <div class="container">
-        
         <div id="bar">
           <div class="icon icon-red"></div>
           <div class="icon icon-yellow"></div>
           <div class="icon icon-green"></div>
         </div>
-        
+
         <div id="screen">
-          
           <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
+            <input type="checkbox" id="darkModeToggle" />
             <span class="slider"></span>
-          
           </label>
           <span class="toggle-text">Toggle Theme</span>
           <div id="innercontent">
-            
-
             <h4>
-            <center>
-            <h3> <p id="time-text">Hello, </p></h3>
-              <h4><p id="time-message"></p></h4>
-            <div id="contentheader">Who Am I?</div>
-        
-           </center></h4>
+              <center>
+                <h3><p id="time-text">Hello, </p></h3>
+                <h4><p id="time-message"></p></h4>
+                <div id="contentheader">Who Am I?</div>
+              </center>
+            </h4>
             <div class="topic_header">> NAME</div>
             <div class="topic_text">Mark Romel Lacanaria</div>
 
             <div class="topic_header">> NICKNAMES</div>
-            <div class="topic_text">Marky / Meki / Loy / Mako</div>
+            <div class="topic_text">Marky / Mako</div>
 
             <div class="topic_header">> DESCRIPTION</div>
             <div class="topic_text">
@@ -100,16 +82,13 @@
               <a href="https://mail.google.com/">Email Me</a>
               - This would be the best way to contact me via <span style="color: #71b1ff;">markymeetsinternet@gmail.com</span>
             </div>
-          
+
             <div class="topic_header">> PROJECTS</div>
             <div class="topic_text">
               Some of the (mini)projects I have done can be found
               <a href="projects.html">on this page</a>.
             </div>
 
-          <!-- <div class="topic_header">> SEE ALSO</div>
-            <div class="topic_text">-</div>
-          --> 
             <div class="topic_header">> HISTORY</div>
             <div class="topic_text">
               > Elementary: <br />
@@ -117,159 +96,163 @@
               - Kiwalan E.S (G3-G5)<br />
               - Sta. Filomena E.S (G6)<br />
               <br />
-              > Highschool / Senior High<br/>
-              - Iligan City East National Highschool
-              (STA FILOMENA) (G7-G12) <br/>
+              > Highschool / Senior High<br />
+              - Iligan City East National Highschool (STA FILOMENA) (G7-G12) <br />
               <br />
             </div>
             <div class="topic_text">
-              > College <br/>
-              - MSU IIT (Currently)
+              > College <br />
+              - MSU IIT (undergraduate) <br />
             </div>
 
-            <div id="innerfooter">Updated: January 2025</div>
+            <div id="innerfooter">Updated: February 2025</div>
           </div>
         </div>
       </div>
     </main>
+
     <!--Footer Section-->
     <footer id="footer">
       <div class="wrapper">
         <div class="social-icons">
-          <a
-            href="https://github.com/marklacanaria"
-            target="_blank"
-            rel="noopener"
-            aria-label="Github"
-            ><i class="fab fa-github fa-lg"></i
-          ></a>
-          <a
-            href="https://web.facebook.com/mark.andradeyu.94"
-            target="_blank"
-            rel="noopener"
-            aria-label="facebook" ><i class="fab fa-facebook fa-lg"></i></a>
-
-            <a href="https://twitter.com/yoitsmemarky" target="_blank" rel="noopener" aria-label="Twitter">
-              <i class="fab fa-twitter fa-lg"></i>
-            </a>
-          
+          <a href="https://github.com/marklacanaria" target="_blank" rel="noopener" aria-label="Github">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://web.facebook.com/mark.andradeyu.94" target="_blank" rel="noopener" aria-label="facebook">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://twitter.com/yoitsmemarky" target="_blank" rel="noopener" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
         </div>
 
         <div class="wrap">
-          <a class="project-button" href="projects.html">   Projects</a>
-          <a href="./resume.html">   Resume</a>
-          <a href="https://marklacanaria.github.io/home/" target="_blank">   OldPortfolio</a>
+          <a class="project-button" href="projects.html"> Projects</a>
+          <a href="./resume.html"> Resume</a>
+          <a href="https://marklacanaria.github.io/home/" target="_blank"> OldPortfolio</a>
         </div>
       </div>
     </footer>
+
+    <script>
+      // Function to toggle dark mode
+const toggleDarkMode = () => {
+  document.body.classList.toggle("dark-mode");
+  document.documentElement.classList.toggle("dark-mode");
+  localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+};
+
+      // Apply dark mode on page load
+      window.onload = function () {
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+        if (isDarkMode) {
+          document.body.classList.add("dark-mode");
+          document.documentElement.classList.add("dark-mode");
+          document.getElementById("darkModeToggle").checked = true;
+        }
+      };
+
+      
+// Add event listener to the toggle button
+document.getElementById("darkModeToggle").addEventListener("change", toggleDarkMode);
+    </script>
+
+    <!-- <script>
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      let greeting;
+      let message;
+
+      // GREETING or MESSAGE
+      if (hours < 12) {
+        greeting = "Good morning! おはよう!";
+        message = "“Do what you can, with what you have, where you are.” ―Theodore Roosevelt.";
+      } else if (hours >= 12 && hours <= 17) {
+        greeting = "Good afternoon! こんにちは";
+        message = "“If you can dream it, you can do it.” ―Walt Disney.";
+      } else {
+        greeting = "Good evening! こんばんは";
+        message = "“Trust yourself that you can do it and get it.” ―Baz Luhrmann.";
+      }
+
+      document.getElementById("time-text").innerHTML = "Hello, " + greeting;
+      document.getElementById("time-message").innerHTML = "" + message;
+    </script> -->
+    <script>
+      const currentTime = new Date();
+      const hours = currentTime.getHours();
+      let greeting;
+      let message;
+    
+      // Greeting options for different times of the day
+      const morningGreetings = [
+        "Good morning! おはよう!",
+        "Rise and shine! おはようございます!",
+        "Morning! おはよう!",
+        "Hello, early bird! おはよう!",
+      ];
+    
+      const afternoonGreetings = [
+        "Good afternoon! こんにちは",
+        "Hello there! こんにちは",
+        "Afternoon! こんにちは",
+        "Hope you're having a great day! こんにちは",
+      ];
+    
+      const eveningGreetings = [
+        "Good evening! こんばんは",
+        "Hello, night owl! こんばんは",
+        "Evening! こんばんは",
+        "Hope you had a great day! こんばんは",
+      ];
+    
+      // Quote options
+      const quotes = [
+        "“Do what you can, with what you have, where you are.” ―Theodore Roosevelt.",
+        "“If you can dream it, you can do it.” ―Walt Disney.",
+        "“Trust yourself that you can do it and get it.” ―Baz Luhrmann.",
+        "“The best way to predict the future is to create it.” ―Peter Drucker.",
+        "“Success is not final, failure is not fatal: It is the courage to continue that counts.” ―Winston Churchill.",
+        "“Believe you can and you're halfway there.” ―Theodore Roosevelt.",
+        "“The only limit to our realization of tomorrow is our doubts of today.” ―Franklin D. Roosevelt.",
+        "“Act as if what you do makes a difference. It does.” ―William James.",
+        "“You are never too old to set another goal or to dream a new dream.” ―C.S. Lewis.",
+        "“The future belongs to those who believe in the beauty of their dreams.” ―Eleanor Roosevelt.",
+      ];
+    
+      // Randomly select a greeting and a quote
+      const randomGreeting = (greetings) => greetings[Math.floor(Math.random() * greetings.length)];
+      const randomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
+    
+      // Determine the time of day and set the greeting and message
+      if (hours < 12) {
+        greeting = randomGreeting(morningGreetings);
+      } else if (hours >= 12 && hours <= 17) {
+        greeting = randomGreeting(afternoonGreetings);
+      } else {
+        greeting = randomGreeting(eveningGreetings);
+      }
+    
+      message = randomQuote();
+    
+      // Update the DOM with the selected greeting and message
+      document.getElementById("time-text").innerHTML = "My dearest visitor, " + greeting;
+      document.getElementById("time-message").innerHTML = message;
+    </script>
+
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#your-element-selector",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+      });
+    </script>
   </body>
 </html>
-<script>
-  function myFunction() {
-     var element = document.body;
-     element.classList.toggle("dark-mode");
-  }
-  </script>
-  
-  <script>
-    const currentTime = new Date();
-    const hours = currentTime.getHours();
-    let greeting;
-    let message;
-
-        /GREETING or MESSAGE/
-    if (hours < 12) {
-      greeting = "Good morning! おはよう!";
-      message = "“Do what you can, with what you have, where you are.” ―Theodore Roosevelt."
-    } else if (hours >= 12 && hours <= 17) {
-      greeting = "Good afternoon! こんにちは";
-      message = "“If you can dream it, you can do it.” ―Walt Disney.";
-    } else {
-      greeting = "Good evening! こんばんは";
-      message  = "“Trust yourself that you can do it and get it.” ―Baz Luhrmann."
-    }
-  
-    document.getElementById("time-text").innerHTML = "Hello, " + greeting;
-    document.getElementById("time-message").innerHTML = ""+message;
-  </script>
-
-<script src="three.r134.min.js"></script>
-<script src="vanta.net.min.js"></script>
-<script>
-VANTA.NET({
-  el: "#your-element-selector",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00
-})
-</script>
-<script>
-  document.getElementById("darkModeToggle").addEventListener("change", function() {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-  });
-  
-  window.onload = function() {
-    if (localStorage.getItem("darkMode") === "true") {
-      document.body.classList.add("dark-mode");
-      document.getElementById("darkModeToggle").checked = true;
-    }
-  };
-</script>
-
-<style>
-  .switch {
-  position: relative;
-  display: inline-block;
-  width: 40px; /* Decreased width */
-  height: 24px; /* Decreased height */
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 24px; /* Adjusted to match the height */
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px; /* Decreased height */
-  width: 18px; /* Decreased width */
-  left: 3px; /* Adjusted position */
-  bottom: 3px; /* Adjusted position */
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider:before {
-  transform: translateX(16px); /* Adjusted translation */
-}
-
-.switch input:focus {
-  outline: none; /* Removes the blue outline */
-}
-.toggle-text {
-  color: #ffffff; /* Default color */
-  font-size: 0.9rem;
-  cursor: pointer;
-  font-display: block;
-}
-
-/* Dark mode text color */
-.dark-mode .toggle-text {
-  color: #fff;
-}
-
-</style>

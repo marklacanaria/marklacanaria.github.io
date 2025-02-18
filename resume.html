@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
+    <!-- <script>
       // Immediate theme application
       (function() {
         const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -10,6 +10,27 @@
           document.body.classList.add('dark-mode');
         }
       })();
+    </script> -->
+    <script>
+      // Function to toggle dark mode
+      const toggleDarkMode = () => {
+        document.body.classList.toggle("dark-mode");
+        document.documentElement.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+      };
+
+      // Apply dark mode on page load
+      window.onload = function () {
+        const isDarkMode = localStorage.getItem("darkMode") === "true";
+        if (isDarkMode) {
+          document.body.classList.add("dark-mode");
+          document.documentElement.classList.add("dark-mode");
+          document.getElementById("darkModeToggle").checked = true;
+        }
+      };
+
+      // Add event listener to the toggle button
+      document.getElementById("darkModeToggle").addEventListener("change", toggleDarkMode);
     </script>
     
     <meta charset="UTF-8" />
@@ -41,7 +62,7 @@
         
          
           <span class="toggle-text">Toggle Theme</span>
-            <center class="toggle-text">CERTIFICATES ATTACHED BELLOW</center>
+            <center class="topic">CERTIFICATES ATTACHED BELLOW</center>
           <div id="innercontent">
           <!--  <h3 class="heading">you can download a copy of this below [scroll a little bit]</h3>-->
             <div class="resume-container">
@@ -54,8 +75,8 @@
                     <center class="toggle-text">CERTIFICATES:</center>
                     <center class="toggle-text">---------------------------------</center>
                 
-                <img src="files/1CodeCred Cert.PNG" alt="Resume Preview" width="100%">
-                <img src="files/2fcc.png" alt="Resume Preview" width="100%">
+                    <img src="files/1CodeCred Cert.PNG" alt="Resume Preview" width="100%">
+                    <img src="files/2fcc.png" alt="Resume Preview" width="100%">
 
                 </div>
               </div>
@@ -335,18 +356,18 @@ input:checked + .slider:before {
   transform: translateX(16px); /* Adjusted translation */
 }
 
-.toggle-text {
-  color: #ffffff; /* Default color */
+/**.toggle-text {
+  color: #ffffff; 
   font-size: 0.9rem;
   cursor: pointer;
   font-display: block;
-}
+}**/
 
 
 /* Dark mode text color */
-.dark-mode .toggle-text {
+/* .dark-mode .toggle-text {
   color: #fff;
-}
+} */
 
 
 </style>

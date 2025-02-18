@@ -4,25 +4,26 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(141, 138, 138);
+  background-color: #bdae93; /* Gruvbox light background */
   border: none;
-  color: rgb(0, 0, 0);
+  color: #504945; /* Gruvbox light text */
   font-size: 16px;
   font-family: monospace;
- 
-  
 }
+
 #head {
-  color: #313131;
+  color: #504945; /* Gruvbox light text */
   font-size: 2.5em;
   text-align: center;
 }
+
 .dark-mode #head {
-  color: #ebebeb;
+  color: #bdae93; /* Gruvbox dark text */
 }
+
 .dark-mode {
-  background-color: #444444;
-  color: white;
+  background-color: #504945; /* Gruvbox dark background */
+  color: #bdae93; /* Gruvbox dark text */
 }
 
 *,
@@ -31,11 +32,9 @@ body {
   box-sizing: border-box;
 }
 
-
-
 .cursor {
   font-weight: 600;
-  color: #7cfc11;
+  color: #98971a; /* Gruvbox green */
   opacity: 0;
   animation: cursor 1s infinite;
 }
@@ -52,21 +51,22 @@ body {
     opacity: 1;
   }
 }
+
 .align-right {
   text-align: right;
   border: 0;
 }
+
 .container {
   width: 90%;
   max-width: 1040px;
   height: 100%;
   margin: 0 auto;
-  
 }
 
 #bar {
   height: 1.75em;
-  background-color: #c7c4c4;
+  background-color: #d5c4a1; /* Gruvbox light background (darker) */
   border-radius: 5px 5px 0 0;
 }
 
@@ -81,46 +81,50 @@ body {
 
 .icon-red {
   margin-left: 20px;
-  background-color: #e94b35;
+  background-color: #cc241d; /* Gruvbox red */
 }
 
 .icon-red:hover {
-  background-color: #c65037;
+  background-color: #9d0006; /* Gruvbox dark red */
 }
 
 .icon-yellow {
-  background-color: #f2cb41;
+  background-color: #d79921; /* Gruvbox yellow */
 }
 
 .icon-yellow:hover {
-  background-color: #c8ac41;
+  background-color: #b57614; /* Gruvbox dark yellow */
 }
 
 .icon-green {
-  background-color: #1aaf5c;
+  background-color: #98971a; /* Gruvbox green */
 }
 
 .icon-green:hover {
-  background-color: #078650;
+  background-color: #79740e; /* Gruvbox dark green */
 }
 
 #screen {
-  background-color: #5c5c5b;
+  background-color: #ebdbb2; /* Gruvbox light background for screen */
   height: 100%;
   border-radius: 0 0 5px 5px;
   overflow-y: auto;
-  
+}
+
+.dark-mode #screen {
+  background-color: #3c3836; /* Gruvbox dark background for screen */
 }
 
 #innercontentProjects {
   margin-left: 0.75em;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  text-align: center; /* Center text */
+  align-items: center;
+  text-align: center;
 }
+
 #innercontentProjects a {
-  margin: 10px 0; /* Add some spacing between the images */
+  margin: 10px 0;
 }
 
 #content {
@@ -128,14 +132,13 @@ body {
 }
 
 #contentheader {
-  color: #e9ff1f;
+  color: #d79921; /* Gruvbox yellow */
   margin-top: 0.75em;
-  background-color: #13121246;
- 
+  background-color: #504945; /* Gruvbox dark background */
 }
 
 .topic_header {
-  color: #7cfc11;
+  color: #98971a; /* Gruvbox green */
   margin-top: 1.5em;
 }
 
@@ -152,7 +155,11 @@ ul {
 
 a:link,
 a:visited {
-  color: #ddd;
+  color: #458588; /* Gruvbox blue */
+}
+
+a:hover {
+  color: #689d6a; /* Gruvbox light green */
 }
 
 ::-webkit-scrollbar {
@@ -221,12 +228,8 @@ a:visited {
   bottom: 6em;
 }
 
-a:hover {
-  color: #7cfc11;
-}
-
 .project-button {
-  text-decoration-color: #7cfc11;
+  text-decoration-color: #98971a; /* Gruvbox green */
 }
 
 @media (min-width: 1600px) {
@@ -253,4 +256,62 @@ a:hover {
   #footer {
     font-size: 13px;
   }
+}
+/**---------------**/
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #504945; /* Gruvbox green */
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Toggle Text Styles */
+.toggle-text {
+  color: #504945;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.dark-mode .toggle-text {
+  color: #bdae93;
 }
